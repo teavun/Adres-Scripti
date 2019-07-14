@@ -7,7 +7,7 @@
  * $db->roadstreets(40184)
  */
 
-require_once 'db.class.php';
+require_once '../classes/db.class.php';
 
 class Api
 {

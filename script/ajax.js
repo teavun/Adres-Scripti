@@ -2,7 +2,7 @@
 var xhr = new XMLHttpRequest();
 
 function cities() {
-    xhr.open('GET', '/cities', true);
+    xhr.open('GET', '/api/cities', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let cities = JSON.parse(xhr.response);
@@ -16,7 +16,8 @@ function cities() {
 }
 
 function towns(cityID) {
-    const link = '/city/' + cityID;
+    console.log(cityID);
+    const link = '/api/city/' + cityID;
     xhr.open('GET', link, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -31,7 +32,7 @@ function towns(cityID) {
 }
 
 function neigborhoods(townID) {
-    const link = '/town/' + townID;
+    const link = '/api/town/' + townID;
     xhr.open('GET', link, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -46,7 +47,7 @@ function neigborhoods(townID) {
 }
 
 function roadstreets(neigborhoodID) {
-    const link = '/neigborhood/' + neigborhoodID;
+    const link = '/api/neigborhood/' + neigborhoodID;
     xhr.open('GET', link, true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -75,7 +76,7 @@ function roadstreets(neigborhoodID) {
 
 function addCity(cityTitle) {
 
-    const link = '/city';
+    const link = '/api/city';
 
     let data = new FormData();
     data.append('CityTitle', cityTitle);
@@ -99,7 +100,7 @@ function addCity(cityTitle) {
 
 function addTown(townTitle, cityKey) {
 
-    const link = '/town';
+    const link = '/api/town';
 
     let data = new FormData();
     data.append('TownTitle', townTitle);
@@ -126,7 +127,7 @@ function addTown(townTitle, cityKey) {
 
 function addNeigborhood(neigborhoodTitle, townKey) {
 
-    const link = '/neigborhood';
+    const link = '/api/neigborhood';
 
     let data = new FormData();
     data.append('NeigborhoodTitle', neigborhoodTitle);
@@ -152,7 +153,7 @@ function addNeigborhood(neigborhoodTitle, townKey) {
 
 function addRoad(roadTitle, neigborhoodKey) {
 
-    const link = '/road';
+    const link = '/api/road';
 
     let data = new FormData();
     data.append('RoadTitle', roadTitle);
@@ -178,7 +179,7 @@ function addRoad(roadTitle, neigborhoodKey) {
 
 function addStreet(streetTitle, neigborhoodKey) {
 
-    const link = '/street';
+    const link = '/api/street';
 
     let data = new FormData();
     data.append('StreetTitle', streetTitle);
@@ -199,4 +200,17 @@ function addStreet(streetTitle, neigborhoodKey) {
         }
     }
     xhr.send(data);
+}
+
+function sendSelectedAddress(fd) {
+
+    const link = "/views/main.view.php";
+    xhr.open("POST", link);
+    xhr.onreadystatechange = function () {
+        if (xhr.status == 200 && xhr.readyState == 4) {
+            console.log(xhr.response);
+        }
+    }
+
+    xhr.send(fd);
 }

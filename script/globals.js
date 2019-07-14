@@ -73,6 +73,8 @@ const newCity = document.getElementById('newcity'),
     newStreet = document.getElementById('newstreet');
 
 
+const sendButton = document.getElementById('sendButton');
+
 var createOption = function (val, txt, key = null) {
     const opt = document.createElement('option');
     opt.value = val;

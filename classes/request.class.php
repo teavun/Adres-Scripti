@@ -29,11 +29,11 @@ class Request
 
     public static function type()
     {
-        return current(self::params());
+        return next(self::params());
     }
 
     public static function id()
     {
-        return next(self::params());
+        return end(self::params());
     }
 }

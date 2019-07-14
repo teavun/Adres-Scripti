@@ -19,9 +19,6 @@ Bağlantılı olarak İl, İlçe, Mahalle, Cadde, Sokak seçimi sağlayan eğer 
 ## Yapılabilir
   - Seçimler AutoComplete ile yapılabilir
   - Mevcut il, ilçe, mahalle, cadde, sokak bilgileri olan düzenlenmiş veritabanı paylaşılabilir
-  - Seçim sonucunda bir sayfaya yönlendirilerek alınan gösterilebilir
-  - Klasörleme vasıtasıyla ajax linkleri api/ şeklinde düzenlenebilir
-
 
 
 ### Nasıl Çalışır

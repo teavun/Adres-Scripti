@@ -7,6 +7,9 @@ city.onchange = function (e) {
     street.innerText = '';
 
     town.innerHTML = '<option value="-1"> Seçiniz </option>';
+    neigborhood.innerHTML = '<option value="-1"> Seçiniz </option>';
+    road.innerHTML = '<option value="-1"> Seçiniz </option>';
+    street.innerHTML = '<option value="-1"> Seçiniz </option>';
     towns(key);
   }
   else {
@@ -25,6 +28,8 @@ town.onchange = function (e) {
     street.innerText = '';
 
     neigborhood.innerHTML = '<option value="-1"> Seçiniz </option>';
+    road.innerHTML = '<option value="-1"> Seçiniz </option>';
+    street.innerHTML = '<option value="-1"> Seçiniz </option>';
     neigborhoods(key);
   } else {
     neigborhood.innerHTML = '<option value="-1"> Seçiniz </option>';
@@ -50,10 +55,22 @@ neigborhood.onchange = function (e) {
 
 }
 
+sendButton.onclick = function () {
+
+  let fd = new FormData();
+  fd.append("city", city[city.selectedIndex].value);
+  fd.append("town", town[town.selectedIndex].value);
+  fd.append("neigborhood", neigborhood[neigborhood.selectedIndex].value);
+  fd.append("road", road[road.selectedIndex].value);
+  fd.append("street", street[street.selectedIndex].value);
+
+  sendSelectedAddress(fd);
+}
+
 /***
- * 
+ *
  * Show Add Box after clicked button
- * 
+ *
  */
 cityButton.onclick = function () {
   if (addCityBox.hidden)

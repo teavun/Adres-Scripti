@@ -14,12 +14,12 @@
         <br>
         <h3 class="text-center"> Adres Seçim Formu </h3>
         <br>
-        <form>
+        <form method="POST" action="/views/main.view.php">
             <div id="cityBox">
                 <div class="form-group row">
                     <label for="city" class="col-sm-1 col-form-label"> Şehir </label>
                     <div class="col-sm-9">
-                        <select id="city" class="form-control">
+                        <select id="city" name="city" class="form-control">
                             <option selected value="-1">Seçiniz</option>
                         </select>
                     </div>
@@ -37,8 +37,8 @@
                 <div class="form-group row">
                     <label for="town" class="col-sm-1 col-form-label">İlçe</label>
                     <div class="col-sm-9">
-                        <select id="town" class="form-control">
-                            <option selected>Seçiniz</option>
+                        <select id="town" name="town" class="form-control">
+                            <option selected  value="-1">Seçiniz</option>
                         </select>
                     </div>
                     <button type="button" class="col-sm-2 btn btn-primary"> Yeni İlçe </button>
@@ -55,8 +55,8 @@
                 <div class="form-group row">
                     <label for="neigborhood" class="col-sm-1 col-form-label">Mahalle</label>
                     <div class="col-sm-9">
-                        <select id="neigborhood" class="form-control">
-                            <option selected>Seçiniz</option>
+                        <select id="neigborhood" name="neigborhood" class="form-control">
+                            <option selected  value="-1">Seçiniz</option>
                         </select>
                     </div>
                     <button type="button" class="col-sm-2 btn btn-primary"> Yeni Mahalle </button>
@@ -73,8 +73,8 @@
                 <div class="form-group row">
                     <label for="road" class="col-sm-1 col-form-label"> Cadde</label>
                     <div class="col-sm-9">
-                        <select id="road" class="form-control">
-                            <option selected>Seçiniz</option>
+                        <select id="road" name="road" class="form-control">
+                            <option selected  value="-1">Seçiniz</option>
                         </select>
                     </div>
                     <button type="button" class="col-sm-2 btn btn-primary"> Yeni Cadde</button>
@@ -91,8 +91,8 @@
                 <div class="form-group row">
                     <label for="street" class="col-sm-1 col-form-label">Sokak</label>
                     <div class="col-sm-9">
-                        <select id="street" class="form-control">
-                            <option selected>Seçiniz</option>
+                        <select id="street" name="street" class="form-control">
+                            <option selected  value="-1">Seçiniz</option>
                         </select>
                     </div>
                     <button type="button" class="col-sm-2 btn btn-primary"> Yeni Sokak</button>
@@ -105,6 +105,7 @@
                     <button class="col-sm-1 btn btn-success btn-sm" type="button"> Kaydet </button>
                 </div>
             </div>
+            <button type="button" class="btn btn-success" id="sendButton"> Seçilen Adresi Gönder </button>
         </form>
     </div>
 
